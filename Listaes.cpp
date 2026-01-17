@@ -1,12 +1,29 @@
 #include <iostream>
 #include <string>
 using namespace std;
+class estudiante{
+
+    private:
+        string nombre;
+        float notaFinal;
+
+    public:
+    estudiante(string n, float nF){
+        nombre = n;
+        notaFinal = nF; 
+
+    }
+        void imprimir(){
+            cout << "Nombre: " << nombre << ", Nota Final: " << notaFinal << endl;
+        }
+    };
+
 class Nodo {
 public:
-    Estudiante dato;
+    estudiante dato;
     Nodo* siguiente;
 
-    Nodo(Estudiante e) : dato(e) {
+    Nodo(estudiante e) : dato(e) {
         siguiente = nullptr;
     }
 };
@@ -21,7 +38,7 @@ public:
     }
 
     void agregarEstudiante(string nombre, float nota) {
-        Estudiante e(nombre, nota);
+        estudiante e(nombre, nota);
         Nodo* nuevo = new Nodo(e);
 
         if (head == nullptr) {
@@ -46,21 +63,6 @@ public:
 
 
 
-class estudiante{
-
-    private:
-        string nombre;
-        float notaFinal;
-
-    public:
-    estudiante(string n, float nF){
-        nombre = n;
-        notaFinal = nF; 
-
-    }
-    
-
-     };
 
 int main (){
 
