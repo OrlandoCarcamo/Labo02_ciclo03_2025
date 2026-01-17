@@ -5,9 +5,10 @@ class estudiante{
 
     private:
         string nombre;
-        float notaFinal;
+       
 
     public:
+    float notaFinal;
     estudiante(string n, float nF){
         nombre = n;
         notaFinal = nF; 
@@ -65,6 +66,18 @@ public:
             actual->dato.imprimir();
             actual = actual->siguiente;
         }
+
+    }
+        float promedioRecursivo(Nodo* nodo, float suma , int contador) {
+    if (nodo == nullptr) {
+        if (contador == 0) 
+            return 0;
+        else
+            return suma / contador;
+         }
+    else 
+        return promedioRecursivo( nodo->siguiente, suma + nodo->dato.notaFinal, contador + 1);
+
     }
 };
 
