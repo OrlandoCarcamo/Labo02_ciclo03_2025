@@ -15,12 +15,7 @@ class estudiante{
 
     }
 
-    void imprimir (){
-        cout << "Nombre: " << nombre << endl << "Nota final: " << notaFinal << endl;
-    }
-     
     
-
         void imprimir(){
             cout << "Nombre: " << nombre << ", Nota Final: " << notaFinal << endl;
         }
@@ -68,7 +63,12 @@ public:
         }
 
     }
-        float promedioRecursivo(Nodo* nodo, float suma , int contador) {
+
+    float calcularPromedioRecursivo() {
+        return promedioRecursivo(head, 0, 0);
+    }
+
+    float promedioRecursivo(Nodo* nodo, float suma , int contador) {
     if (nodo == nullptr) {
         if (contador == 0) 
             return 0;
@@ -85,8 +85,18 @@ public:
 
 
 
-int main (){
- estudiante n1("Orlando", 9.5);
-    n1.imprimir();
+int main() {
+    ListaEnlazada lista;
+
+    lista.agregarEstudiante("Ana", 8.5);
+    lista.agregarEstudiante("Luis", 7.0);
+    lista.agregarEstudiante("Carlos", 9.2);
+
+    cout << "Lista de estudiantes:" << endl;
+    lista.imprimirLista();
+
+    cout << "\nPromedio: "
+         << lista.calcularPromedioRecursivo() << endl;
+
     return 0;
 }
