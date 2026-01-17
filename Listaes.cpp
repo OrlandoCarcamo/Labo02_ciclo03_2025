@@ -13,6 +13,13 @@ class estudiante{
         notaFinal = nF; 
 
     }
+
+    void imprimir (){
+        cout << "Nombre: " << nombre << endl << "Nota final: " << notaFinal << endl;
+    }
+     
+    
+
         void imprimir(){
             cout << "Nombre: " << nombre << ", Nota Final: " << notaFinal << endl;
         }
@@ -64,7 +71,9 @@ public:
 
 
 
-int main (){
 
+int main (){
+ estudiante n1("Orlando", 9.5);
+    n1.imprimir();
     return 0;
 }
